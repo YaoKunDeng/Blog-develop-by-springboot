@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: dyk160513140.
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+logging:
+  level:
+    root: info
+    com.kun: debug
+  file:
+    name: log/blog-dev.blog
