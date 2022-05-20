@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" data-filtered="filtered">
+
+
+
+    <link rel="stylesheet" href="../staitc/css/me.css" th:href="@{../static/image/wechat.jpg}">
+
+</head>
+
+<body>
+
+    <!-- 导肮 -->
+    <nav class="ui inverted attached segment m-padded-tb-mini">
+        <div class="ui container">
+            <!-- stackable属性：适配移动端 类：m-item是为了js拿值 -->
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui teal header item">Blog</h2>
+                <a href="#" class="item m-item m-mobile-hide"><i class="small home icon"></i>首页</a>
+                <a href="#" class="item m-item m-mobile-hide"><i class="small idea icon"></i>分类</a>
+                <a href="#" class="item m-item m-mobile-hide"><i class="small tags icon"></i>标签</a>
+                <a href="#" class="item m-item m-mobile-hide"><i class="small clone icon"></i>归档</a>
+                <a href="#" class="item m-item m-mobile-hide"><i class="small info icon"></i>关于我</a>
+                <div class="right m-item item m-mobile-hide">
+                    <div class="ui icon inverted transparent input">
+                        <input type="text" placeholder="Search....">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 在移动端的时候，导航栏收起来，点击按钮展开 menu toggle没有意义，只是为了js拿到id -->
+        <a href="#" class="ui menu toggle  black icon button m-right-top m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+
+    <!-- 中间内容 -->
+    <div class="m-container-small m-padded-tb-big">
+        <div class="ui container">
+             <!-- 头部 -->
+             <div class="ui top attached segment">
+                <div class="ui grid">
+                    <div class="eleven wide column">
+                        
+                    </div>
+                </div>
+             </div>
+              <!-- 图片区域 -->
+            <div class="ui attached segment">
+                <img src="https://picsum.photos/id/1008/800/450" alt="" class="ui fluid rounded image">
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <!-- 底部footer -->
+    <footer class="ui inverted vertical segment m-padded-tb-massive">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img src="./staitc/image/wechat.jpg" th:src="@{./staitc/image/wechat.jpg}" class="ui rounded  image" alt="" style="width: 110px;">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">最新博客</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">用户故事(User story)</a>
+                        <a href="#" class="item">用户故事(User story)</a>
+                        <a href="#" class="item">用户故事(User story)</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Email:1278375229@qq.com</a>
+                        <a href="#" class="item">QQ:1278375229</a>
+
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">阿坤</h4>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">
+                        这是我的个人博客，会分享关于编程、协作、思考相关的任何内容，希望可以给这来到这儿的人有所帮助...</p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-mini">Copyright @ 2016-2017 Lirenmi Designed By Kun</p>
+        </div>
+
+    </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    
+
+    <script>
+        $('.menu.toggle').click(function (){
+            $('.m-item').toggleClass('m-mobile-hide')
+        });
+    </script>
+</body>
+
+</html>
