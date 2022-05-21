@@ -1,10 +1,7 @@
 package com.kun.aspect;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -30,7 +27,7 @@ import java.util.Arrays;
 public class LogAspect {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Pointcut("execution(* com.kun.web.*.*(..))")
+    @Pointcut("execution(* com.kun.web..*.*(..))")
     public void log(){
 
     }
@@ -46,9 +43,10 @@ public class LogAspect {
         Object[] args = joinPoint.getArgs();
         RequestLog requestLog = new RequestLog(url ,ip, classMethod, args);
         logger.info("Request:{}",requestLog);
+        System.out.println("切面中的Before方法");
 
     }
-    @Before("log()")
+    @After("log()")
     public void doAfter(){
 //        logger.info("--------------Aftere--------------");
     }
