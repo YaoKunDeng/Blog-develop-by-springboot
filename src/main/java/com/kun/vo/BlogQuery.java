@@ -1,0 +1,40 @@
+package com.kun.vo;
+
+public class BlogQuery {
+    private String title;
+    private String typeId;
+    private boolean recommend;
+
+    public BlogQuery() {
+    }
+
+    public BlogQuery(String title, String typeId, boolean recommend) {
+        this.title = title;
+        this.typeId = typeId;
+        this.recommend = recommend;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(String typeId) {
+        this.typeId = typeId;
+    }
+
+    public boolean isRecommend() {
+        return recommend;
+    }
+
+    public void setRecommend(boolean recommend) {
+        this.recommend = recommend;
+    }
+}
