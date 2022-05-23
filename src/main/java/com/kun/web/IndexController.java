@@ -28,7 +28,7 @@ public class IndexController {
 
     @GetMapping("/blog")
     public String blog(){
-        return "admin/blogs";
+        return "admin/blogs-input";
     }
 
 }

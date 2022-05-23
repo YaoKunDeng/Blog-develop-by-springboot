@@ -3,10 +3,14 @@ package com.kun.pojo;
 * Created by kun on 2022/5/20
 * */
 
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+
 
 @Entity
 @Table
@@ -15,6 +19,8 @@ public class Blog {
     @GeneratedValue
     private Long id;
     private String title;
+    @Basic(fetch = FetchType.LAZY)
+    @Lob
     private String content;
     private String firstPicture;
     private String flag;   //放装载，原创类型
@@ -40,6 +46,11 @@ public class Blog {
 
     @OneToMany(mappedBy = "blog")
     private List<Comment> comments = new ArrayList<>();
+
+    @Transient
+    private String tagIds;
+
+    private String description;
 
     public Blog() {
     }
@@ -178,6 +189,44 @@ public class Blog {
 
     public void setComments(List<Comment> comments) {
         this.comments = comments;
+    }
+
+    public String getTagIds() {
+        return tagIds;
+    }
+
+    public void setTagIds(String tagIds) {
+        this.tagIds = tagIds;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void init(){
+        this.tagIds = tagsToIds(this.getTags());
+    }
+
+    private String tagsToIds(List<Tag> tags){
+        if(!tags.isEmpty()){
+            StringBuffer ids = new StringBuffer();
+            boolean flag = false;
+            for(Tag tag : tags){
+                if(flag){
+                    ids.append(",");
+                }else{
+                    flag = true;
+                }
+                ids.append(tag.getId());
+            }
+            return ids.toString();
+        }else{
+            return tagIds;
+        }
     }
 
     @Override

@@ -6,6 +6,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 
 public interface TagsService {
 
@@ -17,6 +19,10 @@ public interface TagsService {
 
     //分页查询
     Page<Tag> listTag(Pageable pageable);
+
+    List<Tag> listTag();
+
+    List<Tag> listTag(String ids);
 
     Tag updateTag(Long id, Tag Tag);
 
